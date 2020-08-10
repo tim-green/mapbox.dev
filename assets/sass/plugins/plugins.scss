@@ -5,3 +5,15 @@
 
 */
 
+//PrismJS overrides
+pre{
+
+}
+
+code{
+  width: 80% !important;
+}
+
+code[class*="language-"]{
+  text-shadow: none;
+}
