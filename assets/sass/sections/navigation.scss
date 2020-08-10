@@ -1,0 +1,23 @@
+/*
+
+  Navigation
+  +
+
+*/
+
+.navigation .section_title, .navigation a{
+    @include fontSize(18px);
+    text-decoration: none; 
+  }
+  
+  .navigation .map-item .about_section{
+    display: none !important;
+  }
+
+  .navigation .section_title{
+
+    &:hover{
+      text-decoration: underline;
+      transition: text-decoration ease-in 6s;
+    }
+  }
