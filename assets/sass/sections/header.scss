@@ -1,0 +1,128 @@
+/*
+
+  Header
+  +
+
+*/
+
+
+.logo {
+  width: 24vw;
+  padding: 3vh 3vw;
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient( 90deg, rgba(10, 10, 10, 0.3), rgba(10, 10, 10, 1) ), url(https://images.unsplash.com/photo-1579724984996-c2d12999e8f6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb) center center;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  position: fixed;
+  color: $white;
+}
+
+.site-name{
+  transition: text-decoration  ease-out 2s;
+  color: $light-gray;
+  background: linear-gradient(-131deg,$white 0%, $light-gray 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &:hover{
+    text-decoration: underline;
+    transition: text-decoration ease-in 2s;
+    
+  }
+}
+
+.mapbox-icon{
+  @include fontSize(100px);
+  
+
+  &:hover{
+    animation: rotation 2s infinite linear;
+
+    @keyframes rotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(359deg);
+      }
+    }
+
+  }
+
+  
+}
+
+.logo-icon {
+  font-family: $etica;
+  width: 100%;
+  height: 180px;
+  min-height: 180px;
+  max-height: 180px;
+  @include border-radius(5px);
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  @include transition(.4s ease-out);
+}
+
+.logo-icon:hover{
+  // @include rotate(-2deg);
+  // @include transition(.4s ease-in);
+}
+
+.logo div {
+  font-weight: bold;
+  margin: 1.5vh 0px;
+}
+
+.logo-title {
+  @include fontSize(18px);
+  font-weight: bold;
+}
+
+.logo-title span {
+  @include fontSize(24px);
+}
+
+.logo-desc {
+  @include fontSize(26px);
+  font-family: "Questrial", sans-serif;
+  width: 100%;
+}
+
+.about {
+  @include fontSize(18px);
+}
+
+.about a, .logo-title a{
+  color: $white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.about a:hover, .logo-title a:hover{
+  text-decoration: underline;
+}
+
+.about span {
+  margin: 0;
+  display: block;
+}
+
+.about span i {
+  @include fontSize(16px);
+}
+
+.header{
+  display: block;
+  padding: 150px 30px 0;
+  width: 420px;
+  max-width: 100%;
+  h1{
+    margin: 0 0 30px;
+  }
+}
+
