@@ -1,0 +1,79 @@
+/*
+
+  Variables
+  +
+
+*/
+
+// Colours
+
+$primary-color: #0a0a0a;
+//$secondary-color:;
+$color-primary: DarkSlateBlue;
+
+//Black
+$black: #000;
+$darkest-black: #0a0a0a;
+$medium-black: #141414;
+$darker-gray: #272727;
+$dark-gray:#101010;
+$medium-gray: #888;
+$light-gray: #d1d1d1;
+
+//White
+$white: #fff;
+
+//Red
+$soft-red: #dc535b;
+$medium-red: #c9373f;
+
+//Pink
+$pink: #ea4c89;
+
+//Green
+$forest-green: #17473a;
+
+//Blue
+$aqua: #00add0;
+//Purple
+$magenta: #930f5b;
+$purple: #363558;
+
+// Base
+
+$base-line-height: 1.7;
+
+//Google font
+//Google font
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+@import url(https://fonts.googleapis.com/css?family=Questrial);
+
+//Typekit font
+@import url(https://use.typekit.net/dur5lka.css);
+
+
+//Fonts
+$font-stack: Helvetica, sans-serif;
+$poppins: 'Poppins', serif;   
+$questrial: 'Questrial', sans-serif;
+$etica: lft-etica, sans-serif;
+
+// Weights
+$hairline-weight: 100;
+$thin-weight:     200;
+$light-weight:    300;
+$normal-weight:   400;
+$medium-weight:   500;
+$semibold-weight: 600;
+$bold-weight:     700;
+$xbold-weight:    800;
+$black-weight:    900;
+
+//Text Transform
+$text-cap: capitalize; 
+$text-lower: lowercase;
+$text-upper: uppercase;
+$text-none: none;
+
+//Various
+$hide: none;
