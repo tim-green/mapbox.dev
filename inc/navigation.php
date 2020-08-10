@@ -20,7 +20,7 @@
 <!-- section start-->
 <a href="map-driving-directions.php">
     <section class="map-item">
-        <div class="section_title">Mapbox Driving Directions</div>
+        <div class="section_title">Future Map: Mapbox Driving Directions</div>
            <div class="about_section">
                <span>Using Mapbox to show driving directions</span>
             </div>
