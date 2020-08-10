@@ -43,7 +43,7 @@
     <div class="display main">
         
     <h1>Default Map</h1>
-    <div class="portal-items" id="section-apps">
+    <div class="map-box" id="section-apps">
     <!-- section start-->
         <section>
         <div id='map' style='width: auto; height: 300px;'></div>

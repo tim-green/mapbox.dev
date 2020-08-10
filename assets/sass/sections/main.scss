@@ -77,7 +77,7 @@
   font-family: $etica;
 }
 
-.portal-items {
+.map-box {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -85,12 +85,12 @@
   /* align section w/ heading above */
 }
 
-.portal-items section {
+.map-box section {
   flex: 1 0 32%;
 }
 
 
-.portal-items a {
+.map-box a {
   width: calc(50% - 15px);
   /* 49% avoids a weird single column on some wide screens */
   display: flex;
@@ -98,9 +98,9 @@
 }
 
 
-.portal-items section {
+.map-box section {
   width: 100%;
-  padding: 2.5vh 5%;
+  padding: 2.5vh 1%;
   margin: 1vh 0px 4vh;
   display: inline-block;
   @include border-radius(5px);
@@ -110,15 +110,17 @@
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
   @include transition(0.4s ease-in-out);
   transform: scale(1);
+
+  &:hover {
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0);
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.06);
+    //transform: scale(1.03);
+    background: $purple;
+  }
 }
 
-.portal-items section:hover {
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0);
-  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.06);
-  transform: scale(1.03);
-  background: $purple;
-}
+
 
 .section_title {
   @include fontSize(24px);
