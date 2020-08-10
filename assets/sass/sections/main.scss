@@ -1,0 +1,231 @@
+/*
+
+  Main
+  +
+
+*/
+
+
+::selection {
+  color: $darkest-black;
+  background: $white;
+}
+
+.main{
+  padding: 0 30px;
+}
+
+.home .site-sidebar .navigation{
+  display:none;
+}
+.main-success{
+  color:$white;
+}
+
+.main-section .home-link{
+  display: none;
+}
+
+@keyframes rotate{
+0% {
+  transform: rotate(0deg);
+}
+
+100%{
+  transform: rotate(360deg);
+  }
+}
+
+#loading {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: $darkest-black;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#spinner {
+  animation: rotate 0.5s infinite linear;
+  width: 50px;
+  height: 50px;
+  border: 2px solid $darkest-black;
+  border-bottom: 2px solid $purple;
+  @include border-radius(50%);
+  margin: 0;
+}
+
+.display {
+  width: 64vw;
+  padding: 4vh 3vw;
+  height: 92vh;
+  display: inline-block;
+  padding-left: 33vw;
+}
+
+.display h1 {
+  @include fontSize(50px);
+  color: $white;
+  font-weight: $bold-weight;
+  font-family: $etica;
+}
+
+.portal-items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  // margin-left: -15px;
+  /* align section w/ heading above */
+}
+
+.portal-items section {
+  flex: 1 0 32%;
+}
+
+
+.portal-items a {
+  width: calc(50% - 15px);
+  /* 49% avoids a weird single column on some wide screens */
+  display: flex;
+  text-decoration: none;
+}
+
+
+.portal-items section {
+  width: 100%;
+  padding: 2.5vh 5%;
+  margin: 1vh 0px 4vh;
+  display: inline-block;
+  @include border-radius(5px);
+  color: $white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: $medium-black;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  @include transition(0.4s ease-in-out);
+  transform: scale(1);
+}
+
+.portal-items section:hover {
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0);
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.06);
+  transform: scale(1.03);
+  background: $purple;
+}
+
+.section_title {
+  @include fontSize(24px);
+  font-weight: $bold-weight;
+  margin: 1vh 0px;
+  padding: 0px 1px;
+  word-wrap: break-word;
+}
+
+.about_section {
+  @include fontSize(18px);
+  margin: 2vh 0px;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+.bottom_section {
+  margin: 1vh 0px;
+  @include fontSize(14px);
+  word-wrap: break-word;
+  display: $hide;
+}
+
+.bottom_section span {
+  margin-right: 20px;
+  font-weight: bold;
+  font-family: $poppins;
+}
+
+.bottom_section span i {
+  @include fontSize(15px);
+}
+
+.bottom_section span i.fa-circle{
+  background: $purple;
+}
+
+.socials {
+  color: $white;
+  text-decoration: none;
+  margin: 3vh 0px !important;
+}
+
+.socials span {
+  display: inline-block !important;
+  margin-right: 2vw !important;
+  font-weight: normal !important;
+}
+
+.socials span a {
+  font-weight: normal !important;
+}
+
+.blog_section {
+  margin: 2vh 0px;
+  padding: 2vh 0px !important;
+}
+
+.blogs {
+  columns: 2;
+}
+
+.blog_title {
+  @include fontSize(50px);
+}
+
+.blog_sub_title {
+  @include fontSize(36px);
+  margin-top: -2vh;
+}
+
+.blogs section {
+  width: 100%;
+  display: inline-block;
+  border-radius: 5px;
+  color: $white;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  @include transition(0.4s ease-in-out);
+  transform: scale(1);
+  padding: 0px;
+  margin: 2vh 0px;
+}
+
+.blogs section img {
+  width: 100%;
+  @include border-top-radius(5px);
+  @include border-right-radius(5px);
+  @include border-bottom-radius(0);
+  @include border-left-radius (0);
+}
+
+.blog_container {
+  padding: 2.5vh 5%;
+}
+
+.blogs section:hover {
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0);
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.06);
+  transform: scale(1.03);
+}
+
+.go_back {
+  position: absolute;
+  color: $white;
+  @include fontSize(26px);
+  margin-left: 5vw;
+  margin-top: 4vh;
+}
