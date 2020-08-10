@@ -1,0 +1,25 @@
+/*
+
+  Footer
+  +
+
+*/
+
+.footer {
+  width: 100%;
+  padding: 8vh 0px;
+  text-align: center;
+}
+
+.footer a {
+  color: $white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover{
+    color: $purple;
+    @include transition(color .3s ease);
+    text-shadow: 2px 2px 0 $black;
+    @include opacity(0.8);
+}
