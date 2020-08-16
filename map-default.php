@@ -43,7 +43,7 @@
     
     <div class="display main">
         
-    <h1>Default Map</h1>
+    <h1>Default Map with Controls</h1>
     <div class="map-box" id="section-apps">
     <!-- section start-->
         <section>
