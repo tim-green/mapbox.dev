@@ -47,7 +47,7 @@
     <div class="map-box" id="section-apps">
     <!-- section start-->
         <section>
-        <div id='map' style='width: 819px; height: 300px;'></div>
+        <div id='map' style='width: 819px; height: 450px;'></div>
         <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvdW5kY3RybCIsImEiOiJjanhvb2FuczkwOTBxM2RwOWR2M2dzcTBvIn0.4OIjhU9J4sQVJGkNIF1eVg';
         var map = new mapboxgl.Map({
