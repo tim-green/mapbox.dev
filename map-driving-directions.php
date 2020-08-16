@@ -31,8 +31,12 @@
   <link rel="stylesheet" href="assets/build/app.min.css">
 
   <!-- Mapbox -->
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.css' type='text/css' />
+
 </head>
 
 <!-- BODY -->
@@ -48,202 +52,91 @@
     <div class="map-box" id="section-apps">
     <!-- section start-->
      <section>
-        
-        <script>
-            mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvdW5kY3RybCIsImEiOiJjanhvb2FuczkwOTBxM2RwOWR2M2dzcTBvIn0.4OIjhU9J4sQVJGkNIF1eVg';
-        var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v10',
-        center: [-122.662323, 45.523751], // starting position
-        zoom: 12
-        });
-        // set the bounds of the map
-        var bounds = [[-123.069003, 45.395273], [-122.303707, 45.612333]];
-        map.setMaxBounds(bounds);
-
-        // initialize the map canvas to interact with later
-        var canvas = map.getCanvasContainer();
-
-        // an arbitrary start will always be the same
-        // only the end or destination will change
-        var start = [-122.662323, 45.523751];
-
-        // create a function to make a directions request
-function getRoute(end) {
-  // make a directions request using cycling profile
-  // an arbitrary start will always be the same
-  // only the end or destination will change
-  var start = [-122.662323, 45.523751];
-  var url = 'https://api.mapbox.com/directions/v5/mapbox/cycling/' + start[0] + ',' + start[1] + ';' + end[0] + ',' + end[1] + '?steps=true&geometries=geojson&access_token=' + mapboxgl.accessToken;
-
-  // make an XHR request https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
-  var req = new XMLHttpRequest();
-  req.open('GET', url, true);
-  req.onload = function() {
-    var json = JSON.parse(req.response);
-    var data = json.routes[0];
-    var route = data.geometry.coordinates;
-    var geojson = {
-      type: 'Feature',
-      properties: {},
-      geometry: {
-        type: 'LineString',
-        coordinates: route
-      }
-    };
-    // if the route already exists on the map, reset it using setData
-    if (map.getSource('route')) {
-      map.getSource('route').setData(geojson);
-    } else { // otherwise, make a new request
-      map.addLayer({
-        id: 'route',
-        type: 'line',
-        source: {
-          type: 'geojson',
-          data: {
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'LineString',
-              coordinates: geojson
-            }
-          }
-        },
-        layout: {
-          'line-join': 'round',
-          'line-cap': 'round'
-        },
-        paint: {
-          'line-color': '#3887be',
-          'line-width': 5,
-          'line-opacity': 0.75
-        }
-      });
-    }
-    // add turn instructions here at the end
-  };
-  req.send();
-}
-
-map.on('load', function() {
-  // make an initial directions request that
-  // starts and ends at the same location
-  getRoute(start);
-
-  // Add starting point to the map
-  map.addLayer({
-    id: 'point',
-    type: 'circle',
-    source: {
-      type: 'geojson',
-      data: {
-        type: 'FeatureCollection',
-        features: [{
-          type: 'Feature',
-          properties: {},
-          geometry: {
-            type: 'Point',
-            coordinates: start
-          }
-        }
-        ]
-      }
-    },
-    paint: {
-      'circle-radius': 10,
-      'circle-color': '#3887be'
-    }
-  });
-  map.on('click', function(e) {
-  var coordsObj = e.lngLat;
-  canvas.style.cursor = '';
-  var coords = Object.keys(coordsObj).map(function(key) {
-    return coordsObj[key];
-  });
-  var end = {
-    type: 'FeatureCollection',
-    features: [{
-      type: 'Feature',
-      properties: {},
-      geometry: {
-        type: 'Point',
-        coordinates: coords
-      }
-    }
-    ]
-  };
-  if (map.getLayer('end')) {
-    map.getSource('end').setData(end);
-  } else {
-    map.addLayer({
-      id: 'end',
-      type: 'circle',
-      source: {
-        type: 'geojson',
-        data: {
-          type: 'FeatureCollection',
-          features: [{
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'Point',
-              coordinates: coords
-            }
-          }]
-        }
-      },
-      paint: {
-        'circle-radius': 10,
-        'circle-color': '#f30'
-      }
-    });
-  }
-  getRoute(coords);
-});
-});
-
-        </script>
-         <div id="map"></div>
-        <div id="instructions">
-        <script>
-            // get the sidebar and add the instructions
-var instructions = document.getElementById('instructions');
-var steps = data.legs[0].steps;
-
-var tripInstructions = [];
-for (var i = 0; i < steps.length; i++) {
-  tripInstructions.push('<br><li>' + steps[i].maneuver.instruction) + '</li>';
-  instructions.innerHTML = '<br><span class="duration">Trip duration: ' + Math.floor(data.duration / 60) + ' min 🚴 </span>' + tripInstructions;
-}
-
-        </script>
-        <style>
-            #instructions {
-  position: absolute;
-  margin: 20px;
-  width: 25%;
-  top: 0;
-  bottom: 20%;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
-  overflow-y: scroll;
-  font-family: sans-serif;
-  font-size: 0.8em;
-  line-height: 2em;
-}
-        </style>
-        </div>
+        <div id="map"></div>
 
     </section>
 
 
-<pre>
+    <script>
+    // Add your Mapbox access token
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvdW5kY3RybCIsImEiOiJjanhvb2FuczkwOTBxM2RwOWR2M2dzcTBvIn0.4OIjhU9J4sQVJGkNIF1eVg';
+    var map = new mapboxgl.Map({
+      container: 'map', // Specify the container ID
+      style: 'mapbox://styles/mapbox/streets-v11', // Specify which map style to use
+      center: [-122.42136449,37.80176523], // Specify the starting position
+      zoom: 14.5, // Specify the starting zoom
+    });
+
+    var draw = new MapboxDraw({
+  // Instead of showing all the draw tools, show only the line string and delete tools
+  displayControlsDefault: false,
+  controls: {
+    line_string: true,
+    trash: true
+  },
+  styles: [
+    // Set the line style for the user-input coordinates
+    {
+      "id": "gl-draw-line",
+      "type": "line",
+      "filter": ["all", ["==", "$type", "LineString"],
+        ["!=", "mode", "static"]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#438EE4",
+        "line-dasharray": [0.2, 2],
+        "line-width": 4,
+        "line-opacity": 0.7
+      }
+    },
+    // Style the vertex point halos
+    {
+      "id": "gl-draw-polygon-and-line-vertex-halo-active",
+      "type": "circle",
+      "filter": ["all", ["==", "meta", "vertex"],
+        ["==", "$type", "Point"],
+        ["!=", "mode", "static"]
+      ],
+      "paint": {
+        "circle-radius": 12,
+        "circle-color": "#FFF"
+      }
+    },
+    // Style the vertex points
+    {
+      "id": "gl-draw-polygon-and-line-vertex-active",
+      "type": "circle",
+      "filter": ["all", ["==", "meta", "vertex"],
+        ["==", "$type", "Point"],
+        ["!=", "mode", "static"]
+      ],
+      "paint": {
+        "circle-radius": 8,
+        "circle-color": "#438EE4",
+      }
+    },
+  ]
+});
+
+// Add the draw tool to the map
+map.addControl(draw);
+
+  </script>
+<div class="info-box">
+  <div id="info">
+    <p>Draw your route using the draw tools on the right. To get the most accurate route match, draw points at regular intervals.</p>
+  </div>
+  <div id="directions"></div>
+</div>
+
+
+<pre class="hide">
   <code class="language-js">
-            mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvdW5kY3RybCIsImEiOiJjanhvb2FuczkwOTBxM2RwOWR2M2dzcTBvIn0.4OIjhU9J4sQVJGkNIF1eVg';
-            var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11'
-            });
+           
   </code>
 </pre>
 

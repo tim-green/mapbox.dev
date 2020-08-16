@@ -64,20 +64,6 @@
     
 
     </div>
-
-<pre>
-  <code class="language-js">
-mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvdW5kY3RybCIsImEiOiJjanhvb2FuczkwOTBxM2RwOWR2M2dzcTBvIn0.4OIjhU9J4sQVJGkNIF1eVg';
-var map = new mapboxgl.Map({
-container: 'map',
-style: 'mapbox://styles/mapbox/streets-v11',
-center: [133.7751, -25.2744],
-zoom: 3
-});
-// Add zoom and rotation controls to the map.
-map.addControl(new mapboxgl.NavigationControl());
-  </code>
-</pre>
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3,npm/jquery-match-height@0.7.2"></script>
 <script src="https://kit.fontawesome.com/ceb2b8cd67.js"></script>
