@@ -115,8 +115,8 @@ var geocoder = new MapboxGeocoder({ // Initialize the geocoder
 
     </div>
   </div>
-<script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.4.1,npm/jquery-match-height@0.7.2,npm/prismjs@1.21.0,npm/prismjs@1.21.0/components/prism-core.min.js,npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.21.0/plugins/unescaped-markup/prism-unescaped-markup.min.js,npm/prismjs@1.21.0/plugins/unescaped-markup/prism-unescaped-markup.min.js,npm/prismjs@1.21.0/plugins/keep-markup/prism-keep-markup.min.js,npm/prismjs@1.21.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js,npm/prismjs@1.21.0/plugins/download-button/prism-download-button.min.js,npm/prismjs@1.21.0/plugins/show-language/prism-show-language.min.js,npm/prismjs@1.21.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.21.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3,npm/jquery-match-height@0.7.2"></script>
 <script src="https://kit.fontawesome.com/ceb2b8cd67.js"></script>
-<script src="assets/build/app.min.js" defer></script>
+<script src="assets/build/app.min.js"></script>
 </body>
 </html>
