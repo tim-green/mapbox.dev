@@ -47,31 +47,37 @@
     <div class="map-box" id="section-apps">
     <!-- section start-->
         <section>
-        <div id='map' style='width: auto; height: 300px;'></div>
-            <script>
-            mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvdW5kY3RybCIsImEiOiJjanhvb2FuczkwOTBxM2RwOWR2M2dzcTBvIn0.4OIjhU9J4sQVJGkNIF1eVg';
-            var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11'
-            });
-            </script>
-        </section>
-
-
-<pre>
-  <code class="language-js">
-            mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvdW5kY3RybCIsImEiOiJjanhvb2FuczkwOTBxM2RwOWR2M2dzcTBvIn0.4OIjhU9J4sQVJGkNIF1eVg';
-            var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11'
-            });
-  </code>
-</pre>
-
-    <!-- section ends-->
+        <div id='map' style='width: 819px; height: 300px;'></div>
+        <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvdW5kY3RybCIsImEiOiJjanhvb2FuczkwOTBxM2RwOWR2M2dzcTBvIn0.4OIjhU9J4sQVJGkNIF1eVg';
+        var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [133.7751, -25.2744],
+        zoom: 3
+        });
+        // Add zoom and rotation controls to the map.
+        map.addControl(new mapboxgl.NavigationControl());
+        </script>
+ 
+   <!-- section ends-->
     
 
     </div>
+
+<pre>
+  <code class="language-js">
+mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvdW5kY3RybCIsImEiOiJjanhvb2FuczkwOTBxM2RwOWR2M2dzcTBvIn0.4OIjhU9J4sQVJGkNIF1eVg';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [133.7751, -25.2744],
+zoom: 3
+});
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl());
+  </code>
+</pre>
   </div>
 <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.4.1,npm/jquery-match-height@0.7.2,npm/prismjs@1.21.0,npm/prismjs@1.21.0/components/prism-core.min.js,npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.21.0/plugins/unescaped-markup/prism-unescaped-markup.min.js,npm/prismjs@1.21.0/plugins/unescaped-markup/prism-unescaped-markup.min.js,npm/prismjs@1.21.0/plugins/keep-markup/prism-keep-markup.min.js,npm/prismjs@1.21.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js,npm/prismjs@1.21.0/plugins/download-button/prism-download-button.min.js,npm/prismjs@1.21.0/plugins/show-language/prism-show-language.min.js,npm/prismjs@1.21.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.21.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
 <script src="https://kit.fontawesome.com/ceb2b8cd67.js"></script>
