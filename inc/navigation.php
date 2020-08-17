@@ -28,11 +28,11 @@
 </a>
 <!-- section ends-->
 <!-- section start-->
-<a href="map-local-search.php">
+<a href="map-3d-buildings.php">
     <section class="map-item">
-        <div class="section_title">Future Map: Map with Local Search</div>
+        <div class="section_title">3D Buildings</div>
            <div class="about_section">
-               <span>Local search with the Geocoding API</span>
+               <span>Display buildings in 3D</span>
             </div>
     </section>
 </a>
