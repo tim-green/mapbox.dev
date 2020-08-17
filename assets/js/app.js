@@ -1,3 +1,5 @@
+var $ = jQuery;
+
 // loading spinner
 setTimeout(function() {
     document.getElementById("loading").classList.add("animated");
