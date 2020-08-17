@@ -38,35 +38,32 @@
 <body>
 <!-- loading -->
 
-       <?php include('inc/global/header.php');?>
-
-    
+    <?php include('inc/global/header.php');?>
     <div class="display main">
         
     <h1>Default Map with Controls</h1>
     <div class="map-box" id="section-apps">
     <!-- section start-->
-        <section>
-        <div id='map' style='width: 819px; height: 450px;'></div>
-        <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvdW5kY3RybCIsImEiOiJjanhvb2FuczkwOTBxM2RwOWR2M2dzcTBvIn0.4OIjhU9J4sQVJGkNIF1eVg';
+      <section>
+        <div id="map" style="width: 819px; height: 450px;"></div>
+
+      <script>
+      
         var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
-        center: [133.7751, -25.2744],
+        center: [133.77, -25.27],
         zoom: 3
-        });
-        // Add zoom and rotation controls to the map.
-        map.addControl(new mapboxgl.NavigationControl());
-        </script>
- 
-   <!-- section ends-->
-    
+      });
 
+      map.addControl(new mapboxgl.NavigationControl());
+      </script>
+      </section>
+   <!-- section ends-->
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3,npm/jquery-match-height@0.7.2"></script>
-<script src="https://kit.fontawesome.com/ceb2b8cd67.js"></script>
-<script src="assets/build/app.min.js" defer></script>
+  <script src="https://kit.fontawesome.com/ceb2b8cd67.js"></script>
+  <script src="assets/build/app.min.js"></script>
 </body>
 </html>
