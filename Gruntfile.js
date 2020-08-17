@@ -30,7 +30,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'assets/build/app.min.js': [
-            'assets/js/app.js'
+            'assets/js/plugins/mapbox.js', 'assets/js/app.js'
           ]
         },
         options: {
