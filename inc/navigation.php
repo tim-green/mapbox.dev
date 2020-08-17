@@ -39,7 +39,7 @@
 <!-- section ends-->
 
 <!-- section start-->
-<a href="#">
+<a href="map-store-locator.php">
     <section class="map-item">
         <div class="section_title">Future Map: Store Locator</div>
            <div class="about_section">
